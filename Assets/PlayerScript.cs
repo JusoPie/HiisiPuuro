@@ -6,9 +6,13 @@ public class PlayerScript : MonoBehaviour
 {
     [Header("Player Movement")]
     public float playerSpeed = 10f;
-    public float hor;
-    public float ver;
-    // Start is called before the first frame update
+
+    public Rigidbody2D rb;
+    public Camera cam;
+
+    Vector2 movement;
+    Vector2 mousePos;
+
     void Start()
     {
         
@@ -17,9 +21,9 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hor = Input.GetAxis("Horizontal");
-        ver = Input.GetAxis("Vertical");
+        movement.x = Input.GetAxis("Horizontal");
+        movement.y = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector3(hor * playerSpeed * Time.deltaTime, ver * playerSpeed * Time.deltaTime, 0));
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 }
