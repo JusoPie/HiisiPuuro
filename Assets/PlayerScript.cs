@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     [Header("Player Movement")]
-    public float playerSpeed = 10f;
+    public float playerSpeed = 3f;
+    public float sprintSpeed = 6f;
+    private float currentSpeed = 3f;
+
 
     public Rigidbody2D rb;
     public Camera cam;
@@ -29,10 +32,23 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * playerSpeed * Time.fixedDeltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            currentSpeed = sprintSpeed;
+        }
+        else 
+        {
+            currentSpeed = playerSpeed;
+        }
+
+        rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
 
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
     }
+
+    
+
+
 }
