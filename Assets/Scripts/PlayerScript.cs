@@ -27,7 +27,12 @@ public class PlayerScript : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
+       
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        transform.position = new Vector2(
+            Mathf.Clamp(transform.position.x, -9.0f, 9.1f),
+            Mathf.Clamp(transform.position.y, -5.1f, 4.9f));
     }
 
     private void FixedUpdate()
