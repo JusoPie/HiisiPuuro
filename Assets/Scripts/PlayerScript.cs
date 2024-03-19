@@ -30,9 +30,10 @@ public class PlayerScript : MonoBehaviour
        
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        transform.position = new Vector2(
+        transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, -9.0f, 9.1f),
-            Mathf.Clamp(transform.position.y, -5.1f, 4.9f));
+            Mathf.Clamp(transform.position.y, -5.1f, 4.9f),
+            transform.position.z);
     }
 
     private void FixedUpdate()
