@@ -58,7 +58,7 @@ public class BearScript : MonoBehaviour
         animator.SetTrigger("attack");
 
 
-        Debug.Log("Attacking puuro!");
+       
 
         StartCoroutine(ResetIsAttacking());
 

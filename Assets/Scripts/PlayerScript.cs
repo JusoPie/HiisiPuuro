@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
     public float playerSpeed = 3f;
     public float sprintSpeed = 6f;
     private float currentSpeed = 3f;
+    private Animator animator;
 
 
     public Rigidbody2D rb;
@@ -18,7 +19,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,13 +28,18 @@ public class PlayerScript : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
-       
+
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, -9.0f, 9.1f),
             Mathf.Clamp(transform.position.y, -5.1f, 4.9f),
             transform.position.z);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
     }
 
     private void FixedUpdate()
@@ -54,6 +60,10 @@ public class PlayerScript : MonoBehaviour
         rb.rotation = angle;
     }
 
+    void Attack() 
+    {
+        animator.SetTrigger("attack");
+    }
     
 
 
