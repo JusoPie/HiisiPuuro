@@ -1319,6 +1319,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 492102674934786601, guid: 5c53e076a72c87e4d867075e555454ee, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1038336437342577987, guid: 5c53e076a72c87e4d867075e555454ee, type: 3}
       propertyPath: m_Name
       value: Hiisi
