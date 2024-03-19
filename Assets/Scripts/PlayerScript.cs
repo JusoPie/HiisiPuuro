@@ -40,6 +40,16 @@ public class PlayerScript : MonoBehaviour
         {
             Attack();
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Stir();
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            StopStirring();
+        }
     }
 
     private void FixedUpdate()
@@ -64,7 +74,14 @@ public class PlayerScript : MonoBehaviour
     {
         animator.SetTrigger("attack");
     }
-    
 
+    void Stir() 
+    {
+        animator.SetBool("isStiring", true);
+    }
 
+    void StopStirring() 
+    {
+        animator.SetBool("isStiring", false);
+    }
 }
