@@ -14,6 +14,8 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
 
+    public Puurokattila puurokattila;
+
     Vector2 movement;
     Vector2 mousePos;
 
@@ -44,6 +46,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Stir();
+            SimmerPuurokattila();
         }
 
         if (Input.GetMouseButtonUp(1))
@@ -58,7 +61,7 @@ public class PlayerScript : MonoBehaviour
         {
             currentSpeed = sprintSpeed;
         }
-        else 
+        else
         {
             currentSpeed = playerSpeed;
         }
@@ -70,18 +73,30 @@ public class PlayerScript : MonoBehaviour
         rb.rotation = angle;
     }
 
-    void Attack() 
+    void Attack()
     {
         animator.SetTrigger("attack");
     }
 
-    void Stir() 
+    void Stir()
     {
         animator.SetBool("isStiring", true);
     }
 
-    void StopStirring() 
+    void StopStirring()
     {
         animator.SetBool("isStiring", false);
+    }
+
+    void SimmerPuurokattila()
+    {
+        if (puurokattila != null)
+        {
+            puurokattila.Simmer();
+        }
+        else
+        {
+            Debug.LogWarning("Puurokattila reference not set in the PlayerScript.");
+        }
     }
 }
