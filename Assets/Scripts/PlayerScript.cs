@@ -10,6 +10,12 @@ public class PlayerScript : MonoBehaviour
     private float currentSpeed = 3f;
     private Animator animator;
 
+    [Header("Shooting")]
+    public Transform gun;
+    public Transform gunHolder;
+    public GameObject crossbow;
+    public GameObject arrow;
+
 
     public Rigidbody2D rb;
     public Camera cam;
@@ -38,7 +44,7 @@ public class PlayerScript : MonoBehaviour
             Mathf.Clamp(transform.position.y, -5.1f, 4.9f),
             transform.position.z);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("space"))
         {
             Attack();
         }
@@ -52,6 +58,19 @@ public class PlayerScript : MonoBehaviour
         else
         {
             StopStirring();
+        }
+
+
+        // This is for shooting
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Load();
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            Shoot();
         }
     }
 
@@ -98,5 +117,17 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.LogWarning("Puurokattila reference not set in the PlayerScript.");
         }
+    }
+
+    public void Load()
+    {
+       
+        Instantiate(crossbow, gunHolder.transform.position, gun.transform.rotation);
+
+    }
+
+    public void Shoot() 
+    {
+        Instantiate(arrow, gun.transform.position, gun.transform.rotation);
     }
 }

@@ -331,6 +331,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &222019175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222019176}
+  m_Layer: 0
+  m_Name: CossbowHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &222019176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222019175}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.035666104, w: 0.99936384}
+  m_LocalPosition: {x: -0.27037847, y: -0.058666028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2040550089}
+  m_Father: {fileID: 456582454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.088}
 --- !u!1 &244761451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1385,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939390254}
   m_CullTransparentMesh: 1
+--- !u!1 &2040550088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2040550089}
+  m_Layer: 0
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2040550089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040550088}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.074, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 222019176}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &686667357812020545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1586,6 +1649,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 2040550089}
+    - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      propertyPath: arrow
+      value: 
+      objectReference: {fileID: 3725231513930610119, guid: 4f8b3cb6f1ab9d2448968125c565eab3, type: 3}
+    - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      propertyPath: crossbow
+      value: 
+      objectReference: {fileID: 7870423753390160752, guid: 8c73cfcb154474e45ae16e0c34db6212, type: 3}
+    - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      propertyPath: gunHolder
+      value: 
+      objectReference: {fileID: 222019176}
+    - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: playerSpeed
       value: 2
       objectReference: {fileID: 0}
@@ -1603,6 +1682,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3124240265198360907, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1072003501}
+    - targetCorrespondingSourceObject: {fileID: 3124240265198360907, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 222019176}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4231280809905739942, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       insertIndex: -1
