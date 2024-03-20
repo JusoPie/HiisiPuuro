@@ -6,11 +6,9 @@ public class Puurokattila : MonoBehaviour
     public float burningThreshold = 3f;
     public float simmerCooldown = 1f;
     public float burnDuration = 5f;
-    public float simmerRate = 1f;
     private float simmerTime = 0f;
     private float burnTime = 0f;
     private bool isBurning = false;
-    private bool isSimmering = false;
 
     public Slider burningSlider; // Reference to the UI slider
 
@@ -20,34 +18,24 @@ public class Puurokattila : MonoBehaviour
         if (burningSlider != null)
         {
             burningSlider.maxValue = burnDuration;
-        }
 
-        StartBurning();
+            StartBurning();
+        }
     }
 
     void Update()
     {
-        if (isSimmering)
-        {
-            if (burnTime > 0f)
-            {
-                burnTime -= simmerRate * Time.deltaTime;
-                if (burnTime < 0f)
-                {
-                    burnTime = 0f;
-                }
-                UpdateBurningSlider();
-            }
-        }
-
-        else if (isBurning)
+        if (isBurning)
         {
             burnTime += Time.deltaTime;
             if (burnTime >= burnDuration)
             {
+                // Puurokattila has burned completely
                 Debug.Log("Puurokattila has burned!");
                 ResetPuurokattila();
             }
+
+            // Update the UI slider value
             UpdateBurningSlider();
         }
     }
@@ -55,21 +43,11 @@ public class Puurokattila : MonoBehaviour
     public void Simmer()
     {
         simmerTime = Time.time;
-        isSimmering = true;
         if (isBurning)
         {
             burnTime = 0f;
-
+            
             Debug.Log("Puurokattila is simmered and cooling down.");
-            UpdateBurningSlider();
-        }
-    }
-
-    public void StopSimmering()
-    {
-        isSimmering = false;
-        if (isBurning)
-        {
             UpdateBurningSlider();
         }
     }

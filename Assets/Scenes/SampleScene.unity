@@ -1402,6 +1402,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3997294850299468010, guid: 1ff4bd923a8f16b48b72fda18ea3402f, type: 3}
+      propertyPath: burnDuration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997294850299468010, guid: 1ff4bd923a8f16b48b72fda18ea3402f, type: 3}
       propertyPath: burningSlider
       value: 
       objectReference: {fileID: 456845235}
