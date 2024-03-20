@@ -43,13 +43,13 @@ public class PlayerScript : MonoBehaviour
             Attack();
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
             Stir();
             SimmerPuurokattila();
         }
 
-        if (Input.GetMouseButtonUp(1))
+        else
         {
             StopStirring();
         }
