@@ -45,7 +45,7 @@ public class HomingEnemy : MonoBehaviour
         }
         
         //transform.Rotate(90f, 0f, 0f, Space.Self);
-        transform.Rotate(0f, 0f, -90f, Space.Self);
+        //transform.Rotate(0f, 0f, -90f, Space.Self);
         
 
     }

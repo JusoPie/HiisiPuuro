@@ -40,6 +40,7 @@ public class PlayerScript : MonoBehaviour
             Mathf.Clamp(transform.position.x, -9.0f, 9.1f),
             Mathf.Clamp(transform.position.y, -5.1f, 4.9f),
             transform.position.z);
+        
 
         if (Input.GetKeyDown("space"))
         {
@@ -82,7 +83,8 @@ public class PlayerScript : MonoBehaviour
             currentSpeed = playerSpeed;
         }
 
-        rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement.normalized * currentSpeed * Time.fixedDeltaTime);
+        
 
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
