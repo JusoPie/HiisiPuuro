@@ -121,7 +121,6 @@ public class PlayerScript : MonoBehaviour
 
     public void Load()
     {
-       
         Instantiate(crossbow, gunHolder.transform.position, gun.transform.rotation);
 
     }
