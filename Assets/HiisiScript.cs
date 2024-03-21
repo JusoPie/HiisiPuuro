@@ -10,6 +10,7 @@ public class HiisiScript : MonoBehaviour
     public float attackRange = 2f;
     private Animator animator;
     private bool isAttacking;
+    public int damageAmount = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +54,23 @@ public class HiisiScript : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Health health = other.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(damageAmount);
+            }
+            Destroy(gameObject);
+
+
+
+        }
+    }
+
+
 
     void Attack()
     {

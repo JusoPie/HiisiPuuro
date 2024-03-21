@@ -8,7 +8,7 @@ public class ArrowScript : MonoBehaviour
     public float power = 1500f;
     private Rigidbody2D rb;
     Vector2 fwd;
-    public GameObject bulletHit;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +31,8 @@ public class ArrowScript : MonoBehaviour
         {
         
             enemyHealthComponent.TakeDamage(1);
+            
             Destroy(gameObject);
-            //gameObject.Play();
         }
 
     }

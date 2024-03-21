@@ -1,40 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Health : MonoBehaviour
 {
     public int maxHealth = 5;
     public int currentHealth;
+    public GameObject gameOver;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int amount) 
-    { 
-        currentHealth -= amount;
-
-        if (currentHealth <= amount)
-        {
-            //dead
-            
-        }
-
-    }
-
-    public void Heal(int amount)
+    public void TakeDamage(int damageAmount)
     {
-        currentHealth += amount;
+        currentHealth -= damageAmount;
+        
 
-        if (currentHealth > maxHealth)
+        if (currentHealth <= 0)
         {
-            currentHealth = maxHealth;
+            Die();
         }
-
     }
 
+    private void Die()
+    {
 
+        Destroy(gameObject);
+        gameOver.SetActive(true);
+    }
 
-}
+}   

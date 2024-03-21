@@ -182,8 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887e78728902373468b5dd77916042bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   currentHealth: 0
+  bulletHit: {fileID: 8055910048230187850, guid: 1a3ff64f00ec7dc408d11e1a04ecb8a3, type: 3}
 --- !u!82 &7311089304793636750
 AudioSource:
   m_ObjectHideFlags: 0

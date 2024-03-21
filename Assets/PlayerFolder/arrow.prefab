@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 1.6
   power: 49.8
-  bulletHit: {fileID: -1446992118535271639}
+  bulletHit: {fileID: 3804775340021522181, guid: 73fa20bb6a8c83841af5c12f207b346d, type: 3}
 --- !u!50 &4581932993651710831
 Rigidbody2D:
   serializedVersion: 4
