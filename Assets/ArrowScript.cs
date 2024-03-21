@@ -22,11 +22,15 @@ public class ArrowScript : MonoBehaviour
         rb.AddForce(fwd * power * bulletSpeed);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-           
-     Destroy(gameObject);
-        
+
+
+        if (other.gameObject.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealthComponent))
+        {
+            enemyHealthComponent.TakeDamage(1);
+            Destroy(gameObject);
+        }
+
     }
 }

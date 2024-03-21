@@ -14,6 +14,10 @@ public class PlayerScript : MonoBehaviour
     public Transform gun;
     public GameObject arrow;
 
+    
+
+    
+
 
     public Rigidbody2D rb;
     public Camera cam;
@@ -46,6 +50,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             Attack();
+            
         }
 
         if (Input.GetMouseButton(1))
@@ -90,13 +95,18 @@ public class PlayerScript : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
+
+        
     }
 
     void Attack()
     {
         animator.SetBool("bowEquipped", false);
         animator.SetTrigger("attack");
+        
     }
+
+    
 
     void Stir()
     {
@@ -134,4 +144,6 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("hasShot", true);
         Instantiate(arrow, gun.transform.position, gun.transform.rotation);
     }
+
+    
 }

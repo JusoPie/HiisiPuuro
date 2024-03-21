@@ -565,6 +565,20 @@ CircleCollider2D:
   m_Offset: {x: -0.011537716, y: -0.099224456}
   serializedVersion: 2
   m_Radius: 0.21962653
+--- !u!114 &456582466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385764636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315f04291e60ddf4995a9721d24113c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
 --- !u!1 &456845233
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +590,7 @@ GameObject:
   - component: {fileID: 456845234}
   - component: {fileID: 456845235}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Puurobar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1523,8 +1537,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bear
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5773214463320625846, guid: fc578075915c9e845bff0ae42b4f700c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1653,6 +1666,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4231280809905739942, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 456582466}
+    - targetCorrespondingSourceObject: {fileID: 4231280809905739942, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 456582458}
     - targetCorrespondingSourceObject: {fileID: 4231280809905739942, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       insertIndex: -1
@@ -1714,8 +1730,7 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 456582454}
-    m_RemovedComponents:
-    - {fileID: 492102674934786601, guid: 5c53e076a72c87e4d867075e555454ee, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
