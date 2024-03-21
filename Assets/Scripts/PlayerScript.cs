@@ -11,10 +11,7 @@ public class PlayerScript : MonoBehaviour
     private Animator animator;
 
     [Header("Shooting")]
-    public Transform gun;
-    public Transform gunHolder;
-    public GameObject crossbow;
-    public GameObject arrow;
+    
 
 
     public Rigidbody2D rb;
@@ -94,11 +91,13 @@ public class PlayerScript : MonoBehaviour
 
     void Attack()
     {
+        animator.SetBool("bowEquipped", false);
         animator.SetTrigger("attack");
     }
 
     void Stir()
     {
+        animator.SetBool("bowEquipped", false);
         animator.SetBool("isStiring", true);
     }
 
@@ -121,12 +120,14 @@ public class PlayerScript : MonoBehaviour
 
     public void Load()
     {
-        Instantiate(crossbow, gunHolder.transform.position, gun.transform.rotation);
+        animator.SetBool("hasShot", false);
+        animator.SetBool("bowEquipped", true);
 
     }
 
     public void Shoot() 
     {
-        Instantiate(arrow, gun.transform.position, gun.transform.rotation);
+        animator.SetBool("bowEquipped", false);
+        animator.SetBool("hasShot", true);
     }
 }

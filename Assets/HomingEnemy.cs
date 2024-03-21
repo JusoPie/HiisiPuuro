@@ -39,12 +39,13 @@ public class HomingEnemy : MonoBehaviour
 
         if (!isAttacking)
         {
-            transform.LookAt(target);
+            //transform.LookAt(target);
             transform.Translate(Vector3.forward * enemySpeed * Time.deltaTime);
+            transform.right = target.position - transform.position;
         }
         
-        transform.Rotate(90f, 0f, 0f, Space.Self);
-        transform.Rotate(0f, 0f, 90f, Space.Self);
+        //transform.Rotate(90f, 0f, 0f, Space.Self);
+        transform.Rotate(0f, 0f, -90f, Space.Self);
         
 
     }
