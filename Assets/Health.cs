@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= amount)
         {
             //dead
+            
         }
 
     }

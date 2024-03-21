@@ -9,6 +9,7 @@ public class Puurokattila : MonoBehaviour
     private float simmerTime = 0f;
     private float burnTime = 0f;
     private bool isBurning = false;
+    public GameObject gameOver;
 
     public Slider burningSlider; // Reference to the UI slider
 
@@ -67,6 +68,19 @@ public class Puurokattila : MonoBehaviour
         Debug.Log("Puurokattila is reset.");
         UpdateBurningSlider();
         //LOAD LOSE SCREEN
+
+        if (burnTime <= 0f)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+
+        Destroy(gameObject);
+        gameOver.SetActive(true);
+        
     }
 
     void UpdateBurningSlider()
