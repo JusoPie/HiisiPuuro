@@ -11,7 +11,8 @@ public class PlayerScript : MonoBehaviour
     private Animator animator;
 
     [Header("Shooting")]
-    
+    public Transform gun;
+    public GameObject arrow;
 
 
     public Rigidbody2D rb;
@@ -131,5 +132,6 @@ public class PlayerScript : MonoBehaviour
     {
         animator.SetBool("bowEquipped", false);
         animator.SetBool("hasShot", true);
+        Instantiate(arrow, gun.transform.position, gun.transform.rotation);
     }
 }
