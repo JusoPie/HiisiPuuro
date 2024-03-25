@@ -102,7 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 1.6
   power: 49.8
-  bulletHit: {fileID: 3804775340021522181, guid: 73fa20bb6a8c83841af5c12f207b346d, type: 3}
 --- !u!50 &4581932993651710831
 Rigidbody2D:
   serializedVersion: 4
@@ -175,10 +174,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3e8ec42b401430143916818af539aeaf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 34e36c4e57eb2704186836f12f3f0223, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.597
-  m_Pitch: 1
+  m_Volume: 0.126
+  m_Pitch: 1.76
   Loop: 0
   Mute: 0
   Spatialize: 0
