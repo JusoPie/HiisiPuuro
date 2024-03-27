@@ -67,7 +67,7 @@ public class Puurokattila : MonoBehaviour
         burnTime = 0f;
         Debug.Log("Puurokattila is reset.");
         UpdateBurningSlider();
-        //LOAD LOSE SCREEN
+        
 
         if (burnTime <= 0f)
         {
