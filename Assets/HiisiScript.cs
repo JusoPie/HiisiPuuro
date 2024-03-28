@@ -54,21 +54,7 @@ public class HiisiScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Health health = other.GetComponent<Health>();
-            if (health != null)
-            {
-                health.TakeDamage(damageAmount);
-            }
-            Destroy(gameObject);
-
-
-
-        }
-    }
+    
 
 
 
