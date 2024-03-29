@@ -5,71 +5,87 @@ using UnityEngine;
 public class BearScript : MonoBehaviour
 {
     private Transform target;
+    private float speed;
     public float enemySpeed = 1f;
     public float attackRange = 2f;
-    public float attackCooldown = 1f;
-    private float lastAttackTime;
     private Animator animator;
     private bool isAttacking;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Puuro").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+        speed = enemySpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        float dist = Vector3.Distance(transform.position, target.position);
 
-        // Check if the enemy is within attack range
-        if (distanceToTarget <= attackRange)
+        if (dist < attackRange)
         {
-            // Check if enough time has passed since the last attack
-            if (Time.time - lastAttackTime >= attackCooldown && !isAttacking)
-            {
-                Attack();
-                lastAttackTime = Time.time;
-            }
-            // Stop movement while attacking
-            return;
+            speed = 0f;
+            isAttacking = true;
+            
         }
 
-        if (!isAttacking)
+        else
         {
-            transform.LookAt(target);
-            transform.Translate(Vector3.forward * enemySpeed * Time.deltaTime);
+            speed = enemySpeed;
+            isAttacking = false;
+            FindPray();
         }
+
+
+        
+
+        if (isAttacking)
+        {
+            Attack();
+        }
+
+        else
+        {
+            StopAttacking();
+        }
+    }
+
+    void FaceTargetOnMelee() 
+    {
+        transform.LookAt(target);
 
         transform.Rotate(90f, 0f, 0f, Space.Self);
         transform.Rotate(0f, 90f, 0f, Space.Self);
-
-
     }
+
+    void FindPray() 
+    {
+        transform.LookAt(target);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+        transform.Rotate(90f, 0f, 0f, Space.Self);
+        transform.Rotate(0f, 90f, 0f, Space.Self);
+    }
+
+
+
+
 
     void Attack()
     {
         // Insert attack behavior here
-        isAttacking = true;
+
 
         animator.SetBool("isAttacking", true);
         animator.SetTrigger("attack");
-
-
-       
-
-        StartCoroutine(ResetIsAttacking());
-
     }
 
-    IEnumerator ResetIsAttacking()
+    void StopAttacking()
     {
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-
-        isAttacking = false;
         animator.SetBool("isAttacking", false);
-
     }
 }
+

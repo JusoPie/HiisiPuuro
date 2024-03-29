@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class HiisiScript : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     public float enemySpeed = 1f;
     public float attackRange = 2f;
     private Animator animator;
     private bool isAttacking;
-    public int damageAmount = 10;
+    
 
     // Start is called before the first frame update
     void Start()
