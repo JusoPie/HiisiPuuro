@@ -5,18 +5,21 @@ using UnityEngine;
 public class BearScript : MonoBehaviour
 {
     private Transform target;
+    private Transform playerTarget;
+    private EnemyHealth enemyHealth; 
     private float speed;
     public float enemySpeed = 1f;
     public float attackRange = 2f;
     private Animator animator;
     private bool isAttacking;
-    private bool isDamaged;
     
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Puuro").transform;
+        playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponent<Animator>();
         speed = enemySpeed;
     }
@@ -52,6 +55,12 @@ public class BearScript : MonoBehaviour
         {
             StopAttacking();
         }
+
+        if (enemyHealth.currentHealth < 20)
+        {
+            target = playerTarget; // Change target to the player
+        }
+
     }
 
     void FaceTargetOnMelee() //Called in animation
@@ -71,7 +80,10 @@ public class BearScript : MonoBehaviour
         transform.Rotate(0f, 90f, 0f, Space.Self);
     }
 
-
+    void AggroPlayer() 
+    {
+        target = playerTarget;
+    }
 
 
 
