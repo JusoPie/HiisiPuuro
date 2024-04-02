@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WolfScript : MonoBehaviour
+public class AlphaWolfScript : MonoBehaviour
 {
     private Transform target;
     private Transform playerTarget;
@@ -101,3 +101,4 @@ public class WolfScript : MonoBehaviour
         animator.SetBool("isAttacking", false);
     }
 }
+
