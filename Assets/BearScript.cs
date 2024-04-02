@@ -10,12 +10,13 @@ public class BearScript : MonoBehaviour
     public float attackRange = 2f;
     private Animator animator;
     private bool isAttacking;
+    private bool isDamaged;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Puuro").transform;
         animator = GetComponent<Animator>();
         speed = enemySpeed;
     }
@@ -53,7 +54,7 @@ public class BearScript : MonoBehaviour
         }
     }
 
-    void FaceTargetOnMelee() 
+    void FaceTargetOnMelee() //Called in animation
     {
         transform.LookAt(target);
 
@@ -76,7 +77,6 @@ public class BearScript : MonoBehaviour
 
     void Attack()
     {
-        // Insert attack behavior here
 
 
         animator.SetBool("isAttacking", true);

@@ -22,7 +22,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
 
-    public Puurokattila puurokattila;
+    
 
     Vector2 movement;
     Vector2 mousePos;
@@ -56,7 +56,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             Stir();
-            SimmerPuurokattila();
+            
         }
 
         else
@@ -119,17 +119,7 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("isStiring", false);
     }
 
-    void SimmerPuurokattila()
-    {
-        if (puurokattila != null)
-        {
-            puurokattila.Simmer();
-        }
-        else
-        {
-            Debug.LogWarning("Puurokattila reference not set in the PlayerScript.");
-        }
-    }
+    
 
     public void Load()
     {
