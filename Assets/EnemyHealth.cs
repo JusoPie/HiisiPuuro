@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
         print("damage");
         currentHealth -= amount;
 
-        if (currentHealth <= amount)
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }

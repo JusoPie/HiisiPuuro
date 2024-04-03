@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 4
+  escapeSpeed: 6
   attackRange: 0.8
   aggroHealth: 7
 --- !u!70 &8050492440686474715

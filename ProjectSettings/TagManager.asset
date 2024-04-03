@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Puuro
   - Enemy
+  - WolfEscape
   layers:
   - Default
   - TransparentFX

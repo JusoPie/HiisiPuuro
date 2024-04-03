@@ -6,6 +6,7 @@ public class WolfScript : MonoBehaviour
 {
     private Transform target;
     private Transform playerTarget;
+    private Transform wolfEscapeTarget;
     private EnemyHealth enemyHealth;
     private float speed;
     public float enemySpeed = 1f;
@@ -20,6 +21,7 @@ public class WolfScript : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Puuro").transform;
         playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        wolfEscapeTarget = GameObject.FindGameObjectWithTag("WolfEscape").transform;
         enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponent<Animator>();
         speed = enemySpeed;
@@ -59,7 +61,7 @@ public class WolfScript : MonoBehaviour
 
         if (enemyHealth.currentHealth < aggroHealth)
         {
-            target = playerTarget; // Change target to the player
+            AggroPlayer();
         }
 
     }
@@ -83,7 +85,18 @@ public class WolfScript : MonoBehaviour
 
     void AggroPlayer()
     {
-        target = playerTarget;
+        if (GameObject.Find("AlphaWolf") != null)
+        {
+            target = playerTarget;
+        }
+
+        else 
+        {
+            target = wolfEscapeTarget;
+            Destroy(gameObject, 5f);
+            print("AlphaWolf not present");
+        }
+        
     }
 
 

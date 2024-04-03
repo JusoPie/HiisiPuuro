@@ -59,7 +59,7 @@ public class AlphaWolfScript : MonoBehaviour
 
         if (enemyHealth.currentHealth < aggroHealth)
         {
-            target = playerTarget; // Change target to the player
+            AggroPlayer();
         }
 
     }
