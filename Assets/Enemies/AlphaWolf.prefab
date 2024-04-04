@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8347989089424073606}
   - component: {fileID: 8464344220803456225}
   - component: {fileID: 6277379221615254469}
-  - component: {fileID: 264736867713888871}
   - component: {fileID: 7904697500368607203}
+  - component: {fileID: 264736867713888871}
   m_Layer: 0
   m_Name: AlphaWolf
   m_TagString: Enemy
@@ -188,6 +188,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 8
   currentHealth: 0
+--- !u!114 &7904697500368607203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967469813913912221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09835be40cc9aa4cbd8a124c165e7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 4
+  attackRange: 1.2
+  aggroHealth: 8
 --- !u!82 &264736867713888871
 AudioSource:
   m_ObjectHideFlags: 0
@@ -284,21 +299,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7904697500368607203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4967469813913912221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a09835be40cc9aa4cbd8a124c165e7da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpeed: 3
-  attackRange: 1.2
-  aggroHealth: 8
 --- !u!1 &6941581382462205798
 GameObject:
   m_ObjectHideFlags: 0

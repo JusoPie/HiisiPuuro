@@ -78,7 +78,6 @@ public class Puurokattila : MonoBehaviour
     private void Die()
     {
 
-        Destroy(gameObject);
         gameOver.SetActive(true);
         
     }

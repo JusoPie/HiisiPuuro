@@ -7,8 +7,6 @@ public class PlayerScript : MonoBehaviour
 {
     [Header("Player Movement")]
     public float playerSpeed = 3f;
-    //public float sprintSpeed = 6f;
-    private float currentSpeed = 3f;
     private Animator animator;
 
     [Header("Dash Settings")]
@@ -21,10 +19,13 @@ public class PlayerScript : MonoBehaviour
     [Header("Shooting")]
     public Transform gun;
     public GameObject arrow;
+    public int ammoCount = 20;
+    [SerializeField] AudioClip outOfAmmoSound;
 
-
+    [Header("Other")]
     public Rigidbody2D rb;
     public Camera cam;
+    private UIManager uiManager;
 
     
 
@@ -34,6 +35,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         animator = GetComponent<Animator>();
         canDash = true;
     }
@@ -78,6 +80,11 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetButtonUp("Fire1"))
         {
+            if (ammoCount == 0) 
+            {
+                AudioSource.PlayClipAtPoint(outOfAmmoSound, transform.position);
+                return;
+            }
             Shoot();
         }
 
@@ -157,10 +164,15 @@ public class PlayerScript : MonoBehaviour
 
     public void Shoot() 
     {
+        AmmoCount(-1);
         animator.SetBool("bowEquipped", false);
         animator.SetBool("hasShot", true);
         Instantiate(arrow, gun.transform.position, gun.transform.rotation);
     }
 
-    
+    public void AmmoCount(int arrows) 
+    {
+        ammoCount += arrows;
+        uiManager.UpdateAmmoCount(ammoCount);
+    }
 }
