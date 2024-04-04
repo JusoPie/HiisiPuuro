@@ -7,6 +7,7 @@ TagManager:
   - Puuro
   - Enemy
   - WolfEscape
+  - PickUp
   layers:
   - Default
   - TransparentFX
