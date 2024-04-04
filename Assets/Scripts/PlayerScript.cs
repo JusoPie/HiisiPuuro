@@ -1,22 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerScript : MonoBehaviour
 {
     [Header("Player Movement")]
     public float playerSpeed = 3f;
-    public float sprintSpeed = 6f;
+    //public float sprintSpeed = 6f;
     private float currentSpeed = 3f;
     private Animator animator;
+
+    [Header("Dash Settings")]
+    [SerializeField] float dashSpeed = 10f;
+    [SerializeField] float dashDuration = 1f;
+    [SerializeField] float dashCooldown = 1f;
+    bool isDashing;
+    bool canDash;
 
     [Header("Shooting")]
     public Transform gun;
     public GameObject arrow;
-
-    
-
-    
 
 
     public Rigidbody2D rb;
@@ -24,27 +28,28 @@ public class PlayerScript : MonoBehaviour
 
     
 
-    Vector2 movement;
+    //Vector2 movement;
+    Vector2 moveDirection;
     Vector2 mousePos;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        canDash = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (isDashing) 
+        {
+            return;
+        }
+
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, -9.0f, 9.1f),
-            Mathf.Clamp(transform.position.y, -5.1f, 4.9f),
-            transform.position.z);
         
 
         if (Input.GetKeyDown("space"))
@@ -65,7 +70,6 @@ public class PlayerScript : MonoBehaviour
         }
 
 
-        // This is for shooting
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -76,20 +80,31 @@ public class PlayerScript : MonoBehaviour
         {
             Shoot();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
+
+        moveDirection = new Vector2(moveX, moveY).normalized;
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, -9.0f, 9.1f),
+            Mathf.Clamp(transform.position.y, -5.1f, 4.9f),
+            transform.position.z);
+
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (isDashing)
         {
-            currentSpeed = sprintSpeed;
-        }
-        else
-        {
-            currentSpeed = playerSpeed;
+            return;
         }
 
-        rb.MovePosition(rb.position + movement.normalized * currentSpeed * Time.fixedDeltaTime);
+        rb.velocity = new Vector2(moveDirection.x * playerSpeed, moveDirection.y * playerSpeed);
+        //rb.MovePosition(rb.position + movement.normalized * currentSpeed * Time.fixedDeltaTime);
         
 
         Vector2 lookDir = mousePos - rb.position;
@@ -97,6 +112,18 @@ public class PlayerScript : MonoBehaviour
         rb.rotation = angle;
 
         
+    }
+
+    private IEnumerator Dash() 
+    {
+        canDash = false;
+        isDashing = true;
+        rb.velocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 
     void Attack()
