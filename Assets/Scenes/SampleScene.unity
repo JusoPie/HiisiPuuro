@@ -4803,7 +4803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5410284180519866980, guid: 1ff4bd923a8f16b48b72fda18ea3402f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5040,11 +5040,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: playerSpeed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: sprintSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      propertyPath: dashCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      propertyPath: dashDuration
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: puurokattila
@@ -5219,6 +5227,10 @@ PrefabInstance:
     - target: {fileID: 2419133743310312392, guid: 47870614b677fb04c8785d3ee6373539, type: 3}
       propertyPath: m_Name
       value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419133743310312392, guid: 47870614b677fb04c8785d3ee6373539, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4732650400039007680, guid: 47870614b677fb04c8785d3ee6373539, type: 3}
       propertyPath: enemySpeed
