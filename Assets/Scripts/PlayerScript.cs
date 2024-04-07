@@ -20,6 +20,8 @@ public class PlayerScript : MonoBehaviour
     public Transform gun;
     public GameObject arrow;
     public int ammoCount = 20;
+    private float timeSincefired;
+    [SerializeField] private float fireRate = 0.5f;
     [SerializeField] AudioClip outOfAmmoSound;
 
     [Header("Other")]
@@ -78,7 +80,7 @@ public class PlayerScript : MonoBehaviour
             Load();
         }
 
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1") && Time.time > timeSincefired)
         {
             if (ammoCount == 0) 
             {
@@ -86,6 +88,7 @@ public class PlayerScript : MonoBehaviour
                 return;
             }
             Shoot();
+            timeSincefired = Time.time + fireRate;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)

@@ -5199,7 +5199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4967469813913912221, guid: c17c57acfe9ca2444bb75bacacfd9641, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6277379221615254469, guid: c17c57acfe9ca2444bb75bacacfd9641, type: 3}
       propertyPath: dropChance
@@ -5310,6 +5310,10 @@ PrefabInstance:
       propertyPath: crossbow
       value: 
       objectReference: {fileID: 7870423753390160752, guid: 8c73cfcb154474e45ae16e0c34db6212, type: 3}
+    - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      propertyPath: fireRate
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: gunHolder
       value: 
