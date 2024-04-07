@@ -9,17 +9,34 @@ public class EnemyHealth : MonoBehaviour
 
     public GameObject droppedLoot;
     public float dropChance = 0.5f;
-  
+
+    public float damageFlashDuration = 0.1f;
+    public Color damageFlashColor = Color.red;
+
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+        
     }
 
     public void TakeDamage(int amount)
     {
         print("damage");
         currentHealth -= amount;
+
+        if (spriteRenderer != null)
+        {
+            StartCoroutine(FlashRed());
+        }
+
+        
 
         if (currentHealth <= 0)
         {
@@ -31,6 +48,15 @@ public class EnemyHealth : MonoBehaviour
             
         }
 
+    }
+
+
+
+    IEnumerator FlashRed()
+    {
+        spriteRenderer.color = damageFlashColor;
+        yield return new WaitForSeconds(damageFlashDuration);
+        spriteRenderer.color = originalColor;
     }
 
     void DropLoot() 
