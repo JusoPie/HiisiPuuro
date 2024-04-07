@@ -28,8 +28,9 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
     private UIManager uiManager;
+    [SerializeField] AudioClip stabSound;
 
-    
+
 
     //Vector2 movement;
     Vector2 moveDirection;
@@ -140,7 +141,8 @@ public class PlayerScript : MonoBehaviour
     {
         animator.SetBool("bowEquipped", false);
         animator.SetTrigger("attack");
-        
+        AudioSource.PlayClipAtPoint(stabSound, transform.position);
+
     }
 
     

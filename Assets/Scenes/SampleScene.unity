@@ -2994,7 +2994,7 @@ Transform:
   m_GameObject: {fileID: 1159662874}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.124, z: 0}
+  m_LocalPosition: {x: 0, y: 0.212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5252,11 +5252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3124240265198360907, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.005
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3124240265198360907, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.749
+      value: -1.089
       objectReference: {fileID: 0}
     - target: {fileID: 3124240265198360907, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5318,6 +5318,10 @@ PrefabInstance:
       propertyPath: gunHolder
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      propertyPath: stabSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a190bdf5362d2db44bc89dec2c2d7349, type: 3}
     - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: playerSpeed
       value: 4
