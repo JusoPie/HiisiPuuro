@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
+  droppedLoot: {fileID: 348951942381401255, guid: 641d81f317769fb4b8ac063c5def3f9d, type: 3}
 --- !u!82 &7311089304793636750
 AudioSource:
   m_ObjectHideFlags: 0
