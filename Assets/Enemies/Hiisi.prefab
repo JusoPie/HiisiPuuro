@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6e1bb30e6e1f54abd51c1ca94d3d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 1.6
+  enemySpeed: 2
   attackRange: 1
 --- !u!61 &3736582970739109893
 BoxCollider2D:
@@ -188,8 +188,6 @@ MonoBehaviour:
   dropChance: 0.5
   damageFlashDuration: 0.1
   damageFlashColor: {r: 1, g: 0, b: 0, a: 1}
-  player: {fileID: 4231280809905739942, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
-  pushbackForce: 5
 --- !u!82 &7311089304793636750
 AudioSource:
   m_ObjectHideFlags: 0

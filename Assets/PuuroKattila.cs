@@ -5,7 +5,7 @@ public class Puurokattila : MonoBehaviour
 {
     public float burningThreshold = 3f;
     public float simmerCooldown = 1f;
-    public float burnDuration = 5f;
+    public float burnDuration = 15f;
     private float simmerTime = 0f;
     private float burnTime = 0f;
     private bool isBurning = false;
@@ -39,6 +39,8 @@ public class Puurokattila : MonoBehaviour
             // Update the UI slider value
             UpdateBurningSlider();
         }
+
+
     }
 
     public void Simmer()

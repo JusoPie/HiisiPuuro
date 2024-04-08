@@ -11,10 +11,18 @@ public class Health : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public float damageFlashDuration = 0.1f;
+    public Color damageFlashColor = Color.red;
+
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+
     // Start is called before the first frame update
     void Start()
     {
         ResetHealth();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     public void ResetHealth() 
@@ -28,11 +36,23 @@ public class Health : MonoBehaviour
         currentHealth -= damageAmount;
         healthBar.SetHealth(currentHealth);
 
+        if (spriteRenderer != null)
+        {
+            StartCoroutine(FlashRed());
+        }
+
 
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    IEnumerator FlashRed()
+    {
+        spriteRenderer.color = damageFlashColor;
+        yield return new WaitForSeconds(damageFlashDuration);
+        spriteRenderer.color = originalColor;
     }
 
     private void Die()
