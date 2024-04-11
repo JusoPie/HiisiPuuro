@@ -85,7 +85,7 @@ public class WolfScript : MonoBehaviour
 
     void AggroPlayer()
     {
-        if (GameObject.Find("AlphaWolf") != null)
+        if (GameObject.Find("AlphaWolf(Clone)") != null)
         {
             target = playerTarget;
         }

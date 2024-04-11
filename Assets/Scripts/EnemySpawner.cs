@@ -4,45 +4,26 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject[] spawner;
-    public GameManager gameManager;
-
-    public GameObject enemy;
+    [SerializeField] private float spawnRate = 1f;
+    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private bool canSpawn = true;
 
     private void Start()
     {
-        gameManager = GameObject.Find("GM").GetComponent<GameManager>();
-
-        int rnd = Random.Range(0, 2);
-
-        if (rnd == 1)
-        {
-            Instantiate(enemy, transform.position, transform.rotation);
-        }
+        StartCoroutine(Spawner());
     }
 
-
-
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator Spawner() 
     {
+        WaitForSeconds wait = new WaitForSeconds(spawnRate);
 
-        if (other.gameObject.name == "Player")
+        while (canSpawn) 
         {
-            for (int i = 0; i < spawner.Length; i++)
-            {
-                spawner[i].SetActive(true);
-            }
+            yield return wait;
+            int rand = Random.Range(0, enemyPrefabs.Length);
+            GameObject enemyToSpawn = enemyPrefabs[rand];
 
-
-        }
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.name == "Player")
-        {
-            gameManager.SpawnEnemyZone();
+            Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
         }
     }
 }

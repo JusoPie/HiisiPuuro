@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f374997b88589564ab7d283f4cc57f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 1
+  enemySpeed: 2
   attackRange: 1.5
 --- !u!95 &6868854024606779189
 Animator:
@@ -344,8 +344,6 @@ MonoBehaviour:
   dropChance: 1
   damageFlashDuration: 0.1
   damageFlashColor: {r: 1, g: 0, b: 0, a: 1}
-  player: {fileID: 4231280809905739942, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
-  pushbackForce: 5
 --- !u!82 &2996643440732595977
 AudioSource:
   m_ObjectHideFlags: 0
