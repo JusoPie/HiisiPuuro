@@ -10,6 +10,7 @@ public class Puurokattila : MonoBehaviour
     private float burnTime = 0f;
     private bool isBurning = false;
     public GameObject gameOver;
+    public UITimer timer;
 
     public Slider burningSlider; // Reference to the UI slider
 
@@ -79,6 +80,10 @@ public class Puurokattila : MonoBehaviour
 
     private void Die()
     {
+        if (timer != null) 
+        {
+            timer.StopTimer();
+        }
 
         gameOver.SetActive(true);
         

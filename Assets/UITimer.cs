@@ -9,6 +9,11 @@ public class UITimer : MonoBehaviour
     public bool playing;
     private float Timer;
 
+    private void Start()
+    {
+        playing = true;
+    }
+
     void Update()
     {
 
@@ -22,5 +27,10 @@ public class UITimer : MonoBehaviour
             TimerText.text = minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
         }
 
+    }
+
+    public void StopTimer() 
+    {
+        playing = false;
     }
 }

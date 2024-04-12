@@ -1219,7 +1219,7 @@ GameObject:
   - component: {fileID: 562658574}
   m_Layer: 5
   m_Name: Timer
-  m_TagString: Untagged
+  m_TagString: Timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4138,6 +4138,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3997294850299468010, guid: 1ff4bd923a8f16b48b72fda18ea3402f, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 562658574}
+    - target: {fileID: 3997294850299468010, guid: 1ff4bd923a8f16b48b72fda18ea3402f, type: 3}
       propertyPath: sizzle
       value: 
       objectReference: {fileID: 8300000, guid: b7fe114fe762b9146b82558067088f44, type: 3}
@@ -4254,6 +4258,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 922982038}
+    - target: {fileID: 4978323002084062849, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
+      propertyPath: timerScript
+      value: 
+      objectReference: {fileID: 562658574}
     - target: {fileID: 6084133349728231101, guid: be9659421c3b546488e23a6a68ed2e03, type: 3}
       propertyPath: cam
       value: 

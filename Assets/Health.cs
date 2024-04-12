@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -8,14 +9,15 @@ public class Health : MonoBehaviour
     public int maxHealth = 5;
     public int currentHealth;
     public GameObject gameOver;
-
     public HealthBar healthBar;
+    public UITimer timerScript;
 
     public float damageFlashDuration = 0.1f;
     public Color damageFlashColor = Color.red;
 
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,10 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
+        if (timerScript != null) 
+        {
+            timerScript.StopTimer();
+        }
 
         Destroy(gameObject);
         gameOver.SetActive(true);
