@@ -56,7 +56,7 @@ public class BearScript : MonoBehaviour
             StopAttacking();
         }
 
-        if (enemyHealth.currentHealth < 20)
+        if (enemyHealth.currentHealth < 15)
         {
             target = playerTarget; // Change target to the player
         }
