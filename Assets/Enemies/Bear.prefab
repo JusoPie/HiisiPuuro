@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887e78728902373468b5dd77916042bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 15
   currentHealth: 0
   droppedLoot: {fileID: 348951942381401255, guid: 641d81f317769fb4b8ac063c5def3f9d, type: 3}
   dropChance: 1

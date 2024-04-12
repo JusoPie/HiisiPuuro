@@ -115,7 +115,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         rb.velocity = new Vector2(moveDirection.x * playerSpeed, moveDirection.y * playerSpeed);
-        //rb.MovePosition(rb.position + movement.normalized * currentSpeed * Time.fixedDeltaTime);
+        
         
 
         Vector2 lookDir = mousePos - rb.position;
