@@ -9,6 +9,7 @@ public class UITimer : MonoBehaviour
     public Text BestTimeText;
     private float Timer;
     private float BestTime;
+    private bool isTiming = true;
 
     private void Start()
     {
@@ -16,12 +17,17 @@ public class UITimer : MonoBehaviour
         BestTime = PlayerPrefs.GetFloat("BestTime", 0f);
         UpdateBestTimeText();
         Timer = 0f; // Initialize timer to start from 0
+        isTiming = true;
     }
 
     void Update()
     {
-        Timer += Time.deltaTime;
-        UpdateTimerText();
+        if (isTiming) 
+        {
+            Timer += Time.deltaTime;
+            UpdateTimerText();
+        }
+        
     }
 
     void UpdateTimerText()
@@ -43,8 +49,9 @@ public class UITimer : MonoBehaviour
     public void StopTimer()
     {
         // Save the new best time if the current time is better
-        if (Timer < BestTime || BestTime == 0)
+        if (Timer > BestTime || BestTime == 0)
         {
+            isTiming = false;
             BestTime = Timer;
             PlayerPrefs.SetFloat("BestTime", BestTime);
             UpdateBestTimeText();
