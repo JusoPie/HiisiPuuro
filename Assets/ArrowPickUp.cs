@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ArrowPickUp : MonoBehaviour
 {
-    public int plusAmount = 10;
-    //private PlayerScript playerscript;
+    public int plusAmountMin = 5;
+    public int plusAmountMax = 11; //11 = Max is 10
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,14 +19,16 @@ public class ArrowPickUp : MonoBehaviour
         
     }
 
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-
+        int amount = Random.Range(plusAmountMin, plusAmountMax);
 
         if (other.gameObject.TryGetComponent<PlayerScript>(out PlayerScript playerScriptComponent))
         {
 
-            playerScriptComponent.AmmoCount(plusAmount);
+            playerScriptComponent.AmmoCount(amount);
 
             Destroy(gameObject);
         }
