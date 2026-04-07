@@ -114,7 +114,7 @@ public class PlayerScript : MonoBehaviour
             return;
         }
 
-        rb.velocity = new Vector2(moveDirection.x * playerSpeed, moveDirection.y * playerSpeed);
+        rb.linearVelocity = new Vector2(moveDirection.x * playerSpeed, moveDirection.y * playerSpeed);
         
         
 
@@ -129,7 +129,7 @@ public class PlayerScript : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-        rb.velocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
+        rb.linearVelocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
 

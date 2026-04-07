@@ -63,13 +63,6 @@ public class BearScript : MonoBehaviour
 
     }
 
-    void FaceTargetOnMelee() //Called in animation
-    {
-        transform.LookAt(target);
-
-        transform.Rotate(90f, 0f, 0f, Space.Self);
-        transform.Rotate(0f, 90f, 0f, Space.Self);
-    }
 
     void FindPray() 
     {
