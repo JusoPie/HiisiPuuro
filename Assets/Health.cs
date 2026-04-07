@@ -38,6 +38,8 @@ public class Health : MonoBehaviour
         currentHealth -= damageAmount;
         healthBar.SetHealth(currentHealth);
 
+        CameraShake.Instance.Shake();
+
         if (spriteRenderer != null)
         {
             StartCoroutine(FlashRed());
