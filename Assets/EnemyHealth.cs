@@ -15,6 +15,8 @@ public class EnemyHealth : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+
+    public AudioClip splatSound;
     
     
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
     {
         print("damage");
         currentHealth -= amount;
+        AudioSource.PlayClipAtPoint(splatSound, transform.position);
 
         if (spriteRenderer != null)
         {
