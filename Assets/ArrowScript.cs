@@ -20,7 +20,7 @@ public class ArrowScript : MonoBehaviour
     private void FixedUpdate()
     {
         fwd = transform.TransformDirection(Vector2.up); // Assuming you want to move along the x-axis in 2D
-        rb.AddForce(fwd * power * bulletSpeed);
+        rb.AddForce(fwd * power * bulletSpeed, ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
