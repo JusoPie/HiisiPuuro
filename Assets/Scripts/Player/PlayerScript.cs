@@ -100,11 +100,6 @@ public class PlayerScript : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, -9.0f, 9.1f),
-            Mathf.Clamp(transform.position.y, -5.1f, 4.9f),
-            transform.position.z);
-
     }
 
     private void FixedUpdate()
@@ -125,11 +120,27 @@ public class PlayerScript : MonoBehaviour
         
     }
 
-    private IEnumerator Dash() 
+    private IEnumerator Dash()
     {
         canDash = false;
         isDashing = true;
-        rb.linearVelocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
+
+        Vector2 dashDirection;
+
+        if (moveDirection != Vector2.zero)
+        {
+            // dash with movement
+            dashDirection = moveDirection;
+        }
+        else
+        {
+            //dash behind when no movement
+            float facingAngle = (rb.rotation + 90f) * Mathf.Deg2Rad;
+            Vector2 facingDir = new Vector2(Mathf.Cos(facingAngle), Mathf.Sin(facingAngle));
+            dashDirection = -facingDir;
+        }
+
+        rb.linearVelocity = new Vector2(dashDirection.x * dashSpeed, dashDirection.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
 
@@ -175,7 +186,7 @@ public class PlayerScript : MonoBehaviour
         Instantiate(arrow, gun.transform.position, gun.transform.rotation);
     }
 
-    public void AmmoCount(int arrows) 
+    public void AmmoCount(int arrows)
     {
         ammoCount += arrows;
         uiManager.UpdateAmmoCount(ammoCount);

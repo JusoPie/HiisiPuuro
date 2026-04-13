@@ -7,7 +7,7 @@ public class UITimer : MonoBehaviour
 {
     public Text TimerText;
     public Text BestTimeText;
-    private float Timer;
+    public float Timer;
     private float BestTime;
     private bool isTiming = true;
 

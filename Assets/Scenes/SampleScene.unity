@@ -1696,12 +1696,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fc167bcc14ce3498aff2486b4acd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 15
+  spawnRate: 20
+  minSpawnRate: 1
   enemyPrefabs:
   - {fileID: 8097300686809124094, guid: fc578075915c9e845bff0ae42b4f700c, type: 3}
   - {fileID: 1038336437342577987, guid: 5c53e076a72c87e4d867075e555454ee, type: 3}
   - {fileID: 2419133743310312392, guid: 47870614b677fb04c8785d3ee6373539, type: 3}
   canSpawn: 1
+  uITimer: {fileID: 1471477944}
 --- !u!4 &692494197
 Transform:
   m_ObjectHideFlags: 0
@@ -2634,10 +2636,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 10
+  minSpawnRate: 1
   enemyPrefabs:
   - {fileID: 4967469813913912221, guid: c17c57acfe9ca2444bb75bacacfd9641, type: 3}
   - {fileID: 2419133743310312392, guid: 47870614b677fb04c8785d3ee6373539, type: 3}
   canSpawn: 1
+  uITimer: {fileID: 1471477944}
 --- !u!4 &1249789325
 Transform:
   m_ObjectHideFlags: 0
@@ -2682,12 +2686,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fc167bcc14ce3498aff2486b4acd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 18
+  spawnRate: 30
+  minSpawnRate: 1
   enemyPrefabs:
   - {fileID: 8097300686809124094, guid: fc578075915c9e845bff0ae42b4f700c, type: 3}
   - {fileID: 1038336437342577987, guid: 5c53e076a72c87e4d867075e555454ee, type: 3}
   - {fileID: 2419133743310312392, guid: 47870614b677fb04c8785d3ee6373539, type: 3}
   canSpawn: 1
+  uITimer: {fileID: 1471477944}
 --- !u!4 &1252867485
 Transform:
   m_ObjectHideFlags: 0
@@ -2946,6 +2952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerText: {fileID: 562658575}
   BestTimeText: {fileID: 1263128428}
+  Timer: 0
 --- !u!4 &1471477945
 Transform:
   m_ObjectHideFlags: 0
