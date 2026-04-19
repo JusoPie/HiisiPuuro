@@ -187,7 +187,7 @@ MonoBehaviour:
   maxHealth: 4
   currentHealth: 0
   droppedLoot: {fileID: 348951942381401255, guid: 641d81f317769fb4b8ac063c5def3f9d, type: 3}
-  dropChance: 0
+  dropChance: 0.3
   damageFlashDuration: 0.1
   damageFlashColor: {r: 1, g: 0, b: 0, a: 1}
   splatSound: {fileID: 8300000, guid: ece993c97698d434a99447090d61ee40, type: 3}

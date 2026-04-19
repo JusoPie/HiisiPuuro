@@ -52,6 +52,17 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void Heal(int healAmount) 
+    {
+        currentHealth += healAmount;
+        healthBar.SetHealth(currentHealth);
+
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
     IEnumerator FlashRed()
     {
         spriteRenderer.color = damageFlashColor;

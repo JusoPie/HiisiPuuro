@@ -352,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   currentHealth: 0
-  droppedLoot: {fileID: 348951942381401255, guid: 641d81f317769fb4b8ac063c5def3f9d, type: 3}
+  droppedLoot: {fileID: 4957630620451738987, guid: 1cf2356b4ecf49f448036f006361e35f, type: 3}
   dropChance: 1
   damageFlashDuration: 0.1
   damageFlashColor: {r: 1, g: 0, b: 0, a: 1}
