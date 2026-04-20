@@ -32,7 +32,7 @@ public class HiisiScript : MonoBehaviour
 
         else 
         {
-            enemySpeed = 0;
+            
             isAttacking = true;
         }
 
@@ -60,6 +60,7 @@ public class HiisiScript : MonoBehaviour
 
     void Attack()
     {
+        enemySpeed = 0f;
         animator.SetBool("isAttacking", true);
         animator.SetTrigger("attack");
     }
