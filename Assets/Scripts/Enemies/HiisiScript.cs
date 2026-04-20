@@ -60,9 +60,6 @@ public class HiisiScript : MonoBehaviour
 
     void Attack()
     {
-        // Insert attack behavior here
-        
-
         animator.SetBool("isAttacking", true);
         animator.SetTrigger("attack");
     }

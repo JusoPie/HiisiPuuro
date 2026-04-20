@@ -2640,6 +2640,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 4967469813913912221, guid: c17c57acfe9ca2444bb75bacacfd9641, type: 3}
   - {fileID: 2419133743310312392, guid: 47870614b677fb04c8785d3ee6373539, type: 3}
+  - {fileID: 1038336437342577987, guid: 5c53e076a72c87e4d867075e555454ee, type: 3}
   canSpawn: 1
   uITimer: {fileID: 1471477944}
 --- !u!4 &1249789325

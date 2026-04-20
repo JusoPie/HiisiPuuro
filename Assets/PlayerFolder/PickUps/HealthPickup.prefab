@@ -374,6 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4051306760683925231}
   - component: {fileID: 1586366837310078173}
+  - component: {fileID: -848728491789554188}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: PickUp
@@ -431,7 +432,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -447,6 +448,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4930687, y: 0.46740115}
   m_EdgeRadius: 0
+--- !u!114 &-848728491789554188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957630620451738987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2e7d4b7376f2a4999bbd683079641e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthPickup
+  healAmount: 30
 --- !u!1 &5713670741502920621
 GameObject:
   m_ObjectHideFlags: 0
