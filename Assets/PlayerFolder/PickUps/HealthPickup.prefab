@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2e7d4b7376f2a4999bbd683079641e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthPickup
-  healAmount: 30
+  healAmount: 5
 --- !u!1 &5713670741502920621
 GameObject:
   m_ObjectHideFlags: 0
