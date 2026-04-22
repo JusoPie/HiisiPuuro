@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AlphaWolfScript : MonoBehaviour
@@ -71,7 +69,7 @@ public class AlphaWolfScript : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
         transform.Rotate(90f, 0f, 0f, Space.Self);
-        transform.Rotate(0f, 90f, 0f, Space.Self);
+        transform.Rotate(0f, 90f, 0f, Space.Self); 
     }
 
     void AggroPlayer()
